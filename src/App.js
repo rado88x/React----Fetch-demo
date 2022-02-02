@@ -12,8 +12,9 @@ function App() {
  const fetechMovieHandler = useCallback(async()=>{
     setIsLoading(true);
     setError(null);
+    let dbResourses = "https://swapi.dev/api/films";
     try {
-      const response = await fetch("https://swapi.dev/api/films");
+      const response = await fetch(dbResourses);
       if (!response.ok) {
         throw new Error("Something gone wrong");
       }
